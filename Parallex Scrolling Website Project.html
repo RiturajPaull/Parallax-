@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax Scrolling Website | Vanilla Javascript</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+			scroll-behavior: smooth;
+		}
+		body{
+			overflow-x: hidden;
+			min-height: 100vh;
+			background: linear-gradient(#3d1b70,#7597de);
+		}
+		header{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px 100px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 10000;
+		}
+		header .logo{
+			color: #fff;
+			font-weight: 700;
+			text-decoration: none;
+			font-size: 2em;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		header ul{
+             display: flex;
+             justify-content: center;
+             align-items: center;
+		}
+		header ul li{
+			list-style: none;
+			margin-left: 20px;
+		}
+		header ul li a{
+			text-decoration: none;
+			padding: 6px 15px;
+			color: #fff;
+			font-family: 'Poppins',sans-serif;
+			text-transform: uppercase;
+			border-radius: 20px;
+		}
+		header ul li a:hover , .active
+		{
+			background: #fff;
+			color: #2b1055;
+		}
+		header ul li a.active
+		{
+			background: #fff;
+			color: #2b1055;
+		}
+        section{
+        	position: relative;
+        	width: 100%;
+        	height: 100vh;
+        	padding: 100px;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        }
+        section::before{
+        	content: '';
+        	position: absolute;
+        	bottom: 0;
+        	width: 100%;
+        	height: 100px;
+        	background: line-gradient(to top,#1c0522,transparent);
+        	z-index: 1000;
+        }
+        section img{
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	height: 100%;
+        	object-fit: cover;
+        	pointer-events: none;
+        }
+		section img#moon{
+			mix-blend-mode: screen;
+        }
+        section img#mountains_front{
+			z-index: 10;
+        }
+        #text{
+        	right: -350px;
+        	position: absolute;
+        	color: #fff;
+        	white-space: nowrap;
+        	font-size: 7.5vw;
+        	z-index: 9;
+        }
+        .btn{
+        	text-decoration: none;
+            padding: 8px 30px;
+            border-radius: 40px;
+            background: #fff;
+            color: #2b1055;
+            font-size: 1.5em;
+            display: inline-block;
+            z-index: 9;
+            transform: translateY(100px);
+        }
+        .sec{
+        	position: relative;
+        	padding: 100px;
+        	background: #1c0522;
+        }
+        .sec h2{
+        	font-size: 3.5em;
+        	margin-bottom: 10px;
+        	color: #fff;
+        }
+        .sec p{
+        	font-size: 1em;
+        	
+        	color: #fff;
+        }
+	</style>
+</head>
+<body>
+   <header>
+   	<a href="#" class="logo">Logo</a>
+   	<ul>
+   		<li><a href="#" class="active">Home</a></li>
+   		<li><a href="#">About</a></li>
+   		<li><a href="#">Work</a></li>
+   		<li><a href="#">Contact</a></li>
+   	</ul>
+   </header>
+   <section>
+   <img src="img\stars.png" id="stars">
+   <img src="img\moon.png" id="moon">
+   <img src="img\mountains_behind.png" id="mountains_behind">
+   <h2 id="text">Moon light</h2>
+   <a href="#" class="btn">Explore</a>
+   <img src="img\mountains_front.png" id="mountains_front">
+   </section>
+   <div class="sec" id="sec">
+   	<h2>Parallex Scrolling Effects</h2>
+   	<p>lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd iasdba askdna asjdbj. lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd iawd we.<br><br>lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd ad
+   	<br><br>lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd iasdba askdna asjdbj. lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd iawd we.<br><br>lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd ad<br><br>lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd iasdba askdna asjdbj. lorem ipsum, dolor sit ametsff webufiwe wiuebfwe iuw ijwebwu iwfuwi iuuqwd kwwn wfjiweff wifunwf fwfuwf os uwef oque osf ijsdcbhsd akdjbhakdsjad kadbkasdb akdk kaksdg kasdkad kakkkkkkkkdaaaaaaaaaaa aksdhas pujr iadqmal adubqwd kajdun asdj ja akjdbakjia aksdq aopqd qhd adg8adga auhdq naid  aduhq didagqkpad aidad ida qi daidbaksd iawd we.</p>
+   </div>
+   <script>
+   	
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let mountains_front = document.getElementById('mountains_front');
+    let text = document.getElementById('text');
+    let btn = document.getElementById('btn');
+    let header = document.querySelector('header');
+
+   window.addEventListener('scroll', function(){
+   let value = window.scrollY;
+   stars.style.left = value * 0.25 + 'px';
+   moon.style.top = value * 1.05 + 'px';
+   mountains_behind.style.top = value * 0.5 + 'px';
+   text.style.marginRight = value * 4 + 'px';
+   text.style.marginTop = value * 1.5 + 'px';
+   header.style.top =  value* 0.5 + 'px';
+   })
+
+   </script>
+</body>
+</html>
